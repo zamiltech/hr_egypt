@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include hr_egypt *.css
+recursive-include hr_egypt *.csv
+recursive-include hr_egypt *.html
+recursive-include hr_egypt *.ico
+recursive-include hr_egypt *.js
+recursive-include hr_egypt *.json
+recursive-include hr_egypt *.md
+recursive-include hr_egypt *.png
+recursive-include hr_egypt *.py
+recursive-include hr_egypt *.svg
+recursive-include hr_egypt *.txt
+recursive-exclude hr_egypt *.pyc
