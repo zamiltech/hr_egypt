@@ -7,6 +7,34 @@ app_description = "HR Egypt"
 app_email = "erpnext@zamiltec.com"
 app_license = "MIT"
 
+fixtures = [
+    # {"dt": "DocType", "filters": [
+    #     [
+    #         "name", "in", [
+    #             "Responsible area",
+    #             "Responsible area table"
+    #         ]
+    #     ]
+    # ]},
+    # {"dt": "Custom Field", "filters": [   
+    #         ["Fieldname", "in", [
+    #             "zt_end_of_health_insurance",
+    #             "zt_has_health_insurance",
+    #             "zt_employee_age",
+    #             "zt_probation_period_date",
+    #             "zt_responsible_area",
+    #             "zt_employee_salary_payment_id",
+    #         ]]
+    
+    # ]},    
+    {"dt": "Custom Field", "filters": [
+        [
+            "Fieldname", "like", "zt_%" 
+        ]     
+    ]
+    }  
+]
+
 # Includes in <head>
 # ------------------
 
@@ -101,6 +129,12 @@ app_license = "MIT"
 # Document Events
 # ---------------
 # Hook on document methods and events
+
+doc_events = {
+	"Employee": {
+		"validate": "hr_egypt.hr_egypt.doctype.responsible_area.responsible_area.update_employee_data",
+	}
+}
 
 # doc_events = {
 #	"*": {
